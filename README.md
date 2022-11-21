@@ -7,5 +7,5 @@
 
 ## Screenshot
 
-![mobile view]('screenshot/mobile.png')
-![desktop view]('screenshot/desktop.png')
+![mobile view](screenshot/mobile.png)
+![desktop view](screenshot/desktop.png)
