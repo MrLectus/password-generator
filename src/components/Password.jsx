@@ -4,15 +4,24 @@ import { FaArrowRight } from 'react-icons/fa'
 function Password() {
     const [range, setRange] = useState(0);
     const [data, setData] = useState({upper: false, lower: false, number: false, symbol: false, password: false});
-    const [password, setPassword] = useState('');
-    
-    const {upper, lower, number, symbol} = data;
-    const upperCase = upper ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "";
-    const lowerCase = lower ? "abcdefghijklmnopqrstuvwxyz" : "";
-    const x_number = number ? "0123456789" : "";
-    const x_symbol = symbol ? "!@#$%^&*()" : "";
 
-    const combined_password = upperCase + lowerCase + x_number + x_symbol;
+    const [password, setPassword] = useState('');
+
+    const {upper, lower, number, symbol} = data;
+
+    const String = {
+        'upper':'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'lower':'abcdefghijklmnopqrstuvwxyz',
+        'number':'0123456789',
+        'symbols':'!@#$%^&*()'
+    }
+
+    const upperCaseLetter = upper ? String.upper : "";
+    const lowerCaseLetters = lower ? String.lower : "";
+    const Numbers = number ? String.number : "";
+    const Symbols = symbol ? String.symbols : "";
+
+    const combined_password = upperCaseLetter + lowerCaseLetters + Numbers + Symbols;
 
     let value = '';
 
