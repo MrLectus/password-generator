@@ -35,10 +35,10 @@ function Password() {
     }
 
     const form = [
-        { name: 'upper', text: "Include upper case letter" ,checked: upper},
-        { name: 'lower', text: 'Include lower case letter', checked: lower},
-        { name: 'number', text: 'Include number case letter', checked: number },
-        { name: 'symbol', text: 'Include symbol case letter', checked: symbol }
+        { name: 'upper', text: "Include upper case letter", checked: upper },
+        { name: 'lower', text: 'Include lower case letter', checked: lower },
+        { name: 'number', text: 'Include number', checked: number },
+        { name: 'symbol', text: 'Include symbol', checked: symbol }
     ]
 
     const tick = (event) => {
@@ -70,12 +70,18 @@ function Password() {
                     {form.map(checkbox => {
                         return (
                             <>
-                                <label className='tracking-widest text-xs flex items-center cursor-pointer' htmlFor={checkbox.name} >
-                                    <input className='outline-none border-none w-5 h-5 cursor-pointer'
+                                <label
+                                    className='tracking-widest text-xs flex items-center cursor-pointer'
+                                    htmlFor={checkbox.name}
+                                >
+                                    <input
+                                        className='outline-none border-none w-5 h-5 cursor-pointer'
                                         onChange={tick} type="checkbox"
                                         id={checkbox.name}
                                         name={checkbox.name}
-                                        checked={checkbox.checked} />&emsp;{checkbox.text}</label><br />
+                                        checked={checkbox.checked}
+                                    />&emsp;{checkbox.text}
+                                </label><br />
                             </>
                         )
                     })}
@@ -83,7 +89,7 @@ function Password() {
                 <div className='my-4 h-10 flex flex-row items-center justify-between p-4 bg-neutral-900'>
                     <p className='font-bold text-neutral-700 tracking-wider'>STRENGTH</p>
                     <p>
-                        {[1, 2, 3, 4].map(_ => {
+                        {Array(4).map(_ => {
                             return (
                                 <span key={useId()} className='mx-1 w-1 h-5 border border-white inline-block'></span>
                             )
